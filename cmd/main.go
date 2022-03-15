@@ -1,14 +1,12 @@
 package main
 
 import (
-	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway"
-	_ "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2"
+	"Test/pkg/api"
+	"Test/pkg/method"
 	"google.golang.org/grpc"
-	_ "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
-	_ "google.golang.org/protobuf/cmd/protoc-gen-go"
 	"net"
-	"test/pkg/api"
-	"test/pkg/method"
+	//"test/pkg/api"
+	//"test/pkg/method"
 )
 
 func main() {
@@ -18,7 +16,7 @@ func main() {
 
 	l, err := net.Listen("tcp", ":8080")
 	if err != nil {
-		return err
+		return
 	}
 
 	s.Serve(l)
